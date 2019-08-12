@@ -21,9 +21,14 @@ h4 {
 	font-size: 1.3rem;
 }
 
+/* 将TOC目录中的h1标题字体变大 */
+.md-toc-content>.md-toc-h1>.md-toc-inner{
+    font-size: 18px;
+}
 /* 将TOC目录的h2标题设置为红色 */
 .md-toc-content>.md-toc-h2>.md-toc-inner{
-    color: red;
+    color: #d9534f;
+	font-size: 14px;
 }
 
 /* TOC目录 递增与显示 */
