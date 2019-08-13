@@ -110,6 +110,12 @@ h4 {
     content:counters(section-sidebar,'.')"、";
 }
 
+/*将侧边栏大纲的h4标题设置为点开头*/
+.outline-content>.outline-h1>.outline-children>.outline-h2>.outline-children>.outline-h3>.outline-children>.outline-h4>.outline-item>.outline-label::before{
+    counter-increment: section-sidebar;
+    content:"●  ";
+}
+
 
 /* 将一级标题显示为中文 */
 .outline-content>.outline-h1>.outline-item>.outline-label::before{
