@@ -16,8 +16,8 @@ typora版本:0.9.72(beta)
     font-weight: bold;
     font-size: 14px;
 }
-/* 将TOC目录的h4标题隐藏 */
-.md-toc-content>.md-toc-h4 {
+/* 将TOC目录的h4,h5标题隐藏 */
+.md-toc-content>.md-toc-h4,.md-toc-h5 {
     display: none;
 }
 
@@ -72,10 +72,10 @@ typora版本:0.9.72(beta)
     counter-increment: section-main-h4;
     content: counter(section-main-h4) "、";
 }  
-/* #write>h5.md-heading .md-plain::before{
+#write>h5.md-heading .md-plain::before{
     counter-increment: section-main-h5;
-    content: counter(section-main-h1)"."counter(section-main-h2)"."counter(section-main-h3)"."counter(section-main-h4)"."counter(section-main-h5)"	";
-} */
+    content: counter(section-main-h4)"."counter(section-main-h5)"	";
+}
 /* #write>h6.md-heading .md-plain::before{
     counter-increment: section-main-h6;
     content: counter(section-main-h1)"."counter(section-main-h2)"."counter(section-main-h3)"."counter(section-main-h4)"."counter(section-main-h5)"."counter(section-main-h6)"	";
@@ -124,6 +124,15 @@ h4{
 .outline-content>.outline-h1>.outline-children>.outline-h2>.outline-children>.outline-h3>.outline-children>.outline-h4>.outline-item>.outline-label::before{
     counter-increment: section-sidebar;
     content:"●  ";
+}
+
+/*将侧边栏大纲的h5*/
+.outline-content>.outline-h1>.outline-children>.outline-h2>.outline-children>.outline-h3>.outline-children>.outline-h4>.outline-children{
+    counter-reset: section-sidebar;
+}
+.outline-content>.outline-h1>.outline-children>.outline-h2>.outline-children>.outline-h3>.outline-children>.outline-h4>.outline-children>.outline-h5>.outline-item>.outline-label::before{
+    counter-increment: section-sidebar;
+    content: counter(section-sidebar)"、";
 }
 
 
