@@ -1,0 +1,138 @@
+    /*
+    侧边栏大纲计数器:
+    在遇到id=outline-content时,计数器清零(h1)
+    在遇到class=outline-children时,计数器清零(h2-h6)
+    */
+    #outline-content,
+    .outline-children {
+      counter-reset: cebianlan;
+    }
+
+    /* 
+    侧边栏大纲序号递增和设置内容 
+    */
+    #outline-content .outline-h1>.outline-item>.outline-label::before,
+    #outline-content .outline-h2>.outline-item>.outline-label::before,
+    #outline-content .outline-h3>.outline-item>.outline-label::before,
+    #outline-content .outline-h4>.outline-item>.outline-label::before,
+    #outline-content .outline-h5>.outline-item>.outline-label::before,
+    #outline-content .outline-h6>.outline-item>.outline-label::before {
+      counter-increment: cebianlan;
+      content: counters(cebianlan, ".")"、";
+    }
+
+    /*
+    TOC目录计数器:
+    在遇到标题时,需要清空下一级标记的计数器
+    因为目录不是循环嵌套的结构
+    */
+    #write .md-toc-content{
+        counter-reset: mulu1;
+    }
+    #write .md-toc-h1{
+        counter-reset: mulu2;
+    }
+    #write .md-toc-h2{
+        counter-reset: mulu3;
+    }
+    #write .md-toc-h3{
+        counter-reset: mulu4;
+    }
+    #write .md-toc-h4{
+        counter-reset: mulu5;
+    }
+    #write .md-toc-h5{
+        counter-reset: mulu6;
+    }
+    /* 
+    TOC目录的序号递增和设置内容
+    */
+    #write .md-toc-h1>a::before{
+        counter-increment: mulu1;
+        content: counter(mulu1,simp-chinese-informal)"、";
+    }
+    #write .md-toc-h2>a::before{
+        counter-increment: mulu2;
+        content: counter(mulu1)"."counter(mulu2)" ";
+    }
+    #write .md-toc-h3>a::before{
+        counter-increment: mulu3;
+        content: counter(mulu1)"."counter(mulu2)"."counter(mulu3)" ";
+    }
+    #write .md-toc-h4>a::before{
+        counter-increment: mulu4;
+        content: counter(mulu1)"."counter(mulu2)"."counter(mulu3)"."counter(mulu4)" ";
+    }
+    #write .md-toc-h5>a::before{
+        counter-increment: mulu5;
+        content: counter(mulu1)"."counter(mulu2)"."counter(mulu3)"."counter(mulu4)"."counter(mulu5)" ";
+    }
+    #write .md-toc-h6>a::before{
+        counter-increment: mulu6;
+        content: counter(mulu1)"."counter(mulu2)"."counter(mulu3)"."counter(mulu4)"."counter(mulu5)"."counter(mulu6)" ";
+    }
+
+
+
+    /*
+    正文标题计数器:
+    在遇到标题时,需要清空下一级标记的计数器
+    因为目录不是循环嵌套的结构
+    */
+    #write{
+        counter-reset: zhengwen1;
+    }
+    #write h1{
+        counter-reset: zhengwen2;
+    }
+    #write h2{
+        counter-reset: zhengwen3;
+    }
+    #write h3{
+        counter-reset: zhengwen4;
+    }
+    #write h4{
+        counter-reset: zhengwen5;
+    }
+    #write h5{
+        counter-reset: zhengwen6;
+    }
+
+    /* 
+    正文标题的序号递增和设置内容
+    */
+    #write h1>span::before{
+        counter-increment: zhengwen1;
+        content: counter(zhengwen1,simp-chinese-informal)"、";
+    }
+    #write h2>span::before{
+        counter-increment: zhengwen2;
+        content: counter(zhengwen1)"."counter(zhengwen2)" ";
+    }
+    #write h3>span::before{
+        counter-increment: zhengwen3;
+        content: counter(zhengwen1)"."counter(zhengwen2)"."counter(zhengwen3)" ";
+    }
+    #write h4>span::before{
+        counter-increment: zhengwen4;
+        content: counter(zhengwen1)"."counter(zhengwen2)"."counter(zhengwen3)"."counter(zhengwen4)" ";
+    }
+    #write h5>span::before{
+        counter-increment: zhengwen5;
+        content: counter(zhengwen1)"."counter(zhengwen2)"."counter(zhengwen3)"."counter(zhengwen4)"."counter(zhengwen5)" ";
+    }
+    #write h6>span::before{
+        counter-increment: zhengwen6;
+        content: counter(zhengwen1)"."counter(zhengwen2)"."counter(zhengwen3)"."counter(zhengwen4)"."counter(zhengwen5)"."counter(zhengwen6)" ";
+    }
+
+
+    /* 设置正文标题的字体 */
+    #write h1,h2,h3,h4,h5,h6{
+        font-family: "雅黑"
+    }
+
+    /* 修改标题链接样式 */
+    .md-heading>.md-link>a {
+        color:#4e9072;
+    }
