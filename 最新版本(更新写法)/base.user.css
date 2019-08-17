@@ -131,6 +131,10 @@
     #write h1,h2,h3,h4,h5,h6{
         font-family: "雅黑"
     }
+    /* 设置加粗后的字体的字体设置为雅黑 */
+    #write p strong span{
+        font-family: "雅黑"
+    }
 
     /* 修改标题链接样式 */
     .md-heading>.md-link>a {
