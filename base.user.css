@@ -1,3 +1,10 @@
+   
+    /* 修改当前所在目录的颜色 */
+    .pin-outline #outline-content .outline-active strong, .pin-outline .outline-active {
+        font-weight: 700;
+        color: red;
+    }
+
     /* 设置toc的字体大小 */
     #write .md-toc-item{
         font-size: 18px !important;
