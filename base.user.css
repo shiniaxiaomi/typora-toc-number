@@ -1,0 +1,30 @@
+    /* 设置toc的字体大小 */
+    #write .md-toc-item{
+        font-size: 18px !important;
+    }
+
+    /*
+    侧边栏大纲计数器:
+    在遇到id=outline-content时,计数器清零(h1)
+    在遇到class=outline-children时,计数器清零(h2-h6)
+    */
+    #outline-content,
+    .outline-children {
+      counter-reset: cebianlan;
+    }
+
+    /* 
+    侧边栏大纲序号递增和设置内容 
+    */
+    #outline-content .outline-h1>.outline-item>.outline-label::before,
+    #outline-content .outline-h2>.outline-item>.outline-label::before,
+    #outline-content .outline-h3>.outline-item>.outline-label::before,
+    #outline-content .outline-h4>.outline-item>.outline-label::before,
+    #outline-content .outline-h5>.outline-item>.outline-label::before,
+    #outline-content .outline-h6>.outline-item>.outline-label::before {
+      counter-increment: cebianlan;
+      content: counter(cebianlan)".";
+    }
+
+  
+  
